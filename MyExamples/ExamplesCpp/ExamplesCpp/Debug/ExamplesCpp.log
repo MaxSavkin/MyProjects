@@ -1,0 +1,49 @@
+﻿Сборка начата 21.12.2014 23:26:37.
+     1>Проект "c:\Users\Макс\documents\visual studio 2010\Projects\ExamplesCpp\ExamplesCpp\ExamplesCpp.vcxproj" в узле 2 (целевые объекты build).
+     1>PrepareForBuild:
+         Создание каталога "c:\users\макс\documents\visual studio 2010\Projects\ExamplesCpp\Debug\".
+       InitializeBuildStatus:
+         Создание "Debug\ExamplesCpp.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(19): error C2470: CThreadBase: выглядит как определение функции, но без списка параметров; пропускается вероятное тело функции
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C2653: CThreadBase: не является именем класса или пространства имен
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "BeginRead"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C2433: BOOL: "inline" не разрешается для объявлений данных
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C2065: DWORD: необъявленный идентификатор
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C2146: синтаксическая ошибка: отсутствие ")" перед идентификатором "dwTimeout"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): error C2059: синтаксическая ошибка: )
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(75): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(75): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(80): error C2653: CThreadBase: не является именем класса или пространства имен
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(82): error C2065: m_cs: необъявленный идентификатор
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(82): error C3861: LeaveCriticalSection: идентификатор не найден
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2653: CThreadBase: не является именем класса или пространства имен
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "BeginWrite"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2433: BOOL: "inline" не разрешается для объявлений данных
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2086: int BOOL: переопределение
+                 c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(74): см. объявление "BOOL"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2065: DWORD: необъявленный идентификатор
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2146: синтаксическая ошибка: отсутствие ")" перед идентификатором "dwTimeout"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(85): error C2059: синтаксическая ошибка: )
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(86): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(86): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(91): error C2653: CThreadBase: не является именем класса или пространства имен
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(93): error C2065: m_cs: необъявленный идентификатор
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(93): error C3861: LeaveCriticalSection: идентификатор не найден
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(96): error C2653: CThreadBase: не является именем класса или пространства имен
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(98): error C2065: m_cs: необъявленный идентификатор
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(98): error C3861: EnterCriticalSection: идентификатор не найден
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(101): error C2653: CThreadBase: не является именем класса или пространства имен
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(103): error C2065: m_cs: необъявленный идентификатор
+     1>c:\program files\microsoft sdks\windows\v7.0a\include\thrdbase.h(103): error C3861: LeaveCriticalSection: идентификатор не найден
+     1>Построение проекта "c:\Users\Макс\documents\visual studio 2010\Projects\ExamplesCpp\ExamplesCpp\ExamplesCpp.vcxproj" завершено (целевые объекты build) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:07.34
