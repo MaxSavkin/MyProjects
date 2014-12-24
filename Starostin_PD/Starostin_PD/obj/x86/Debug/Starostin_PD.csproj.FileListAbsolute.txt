@@ -1,0 +1,8 @@
+c:\users\макс\documents\visual studio 2010\Projects\Starostin_PD\Starostin_PD\bin\Debug\Starostin_PD.exe
+c:\users\макс\documents\visual studio 2010\Projects\Starostin_PD\Starostin_PD\bin\Debug\Starostin_PD.pdb
+c:\users\макс\documents\visual studio 2010\Projects\Starostin_PD\Starostin_PD\obj\x86\Debug\Starostin_PD.Properties.Resources.resources
+c:\users\макс\documents\visual studio 2010\Projects\Starostin_PD\Starostin_PD\obj\x86\Debug\Starostin_PD.csproj.GenerateResource.Cache
+c:\users\макс\documents\visual studio 2010\Projects\Starostin_PD\Starostin_PD\obj\x86\Debug\Starostin_PD.exe
+c:\users\макс\documents\visual studio 2010\Projects\Starostin_PD\Starostin_PD\obj\x86\Debug\Starostin_PD.pdb
+D:\Учеба\MyProjects\Starostin_PD\Starostin_PD\obj\x86\Debug\Starostin_PD.exe
+D:\Учеба\MyProjects\Starostin_PD\Starostin_PD\obj\x86\Debug\Starostin_PD.pdb
