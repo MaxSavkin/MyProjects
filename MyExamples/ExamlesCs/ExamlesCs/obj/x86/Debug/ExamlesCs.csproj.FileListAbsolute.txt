@@ -1,5 +1,0 @@
-c:\users\макс\documents\visual studio 2010\Projects\ExamlesCs\ExamlesCs\bin\Debug\ExamlesCs.exe
-c:\users\макс\documents\visual studio 2010\Projects\ExamlesCs\ExamlesCs\bin\Debug\ExamlesCs.pdb
-c:\users\макс\documents\visual studio 2010\Projects\ExamlesCs\ExamlesCs\obj\x86\Debug\ExamlesCs.exe
-c:\users\макс\documents\visual studio 2010\Projects\ExamlesCs\ExamlesCs\obj\x86\Debug\ExamlesCs.pdb
-C:\Users\Макс\Documents\Visual Studio 2010\Projects\ExamlesCs\ExamlesCs\obj\x86\Debug\ExamlesCs.csprojResolveAssemblyReference.cache
