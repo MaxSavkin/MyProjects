@@ -22,10 +22,7 @@ namespace Sprat.Droid
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
-			//LoadApplication (new App ());
-
-			Android.OS.Process.KillProcess (Android.OS.Process.MyPid());
-
+			LoadApplication (new App ());
 		}
 	}
 }
