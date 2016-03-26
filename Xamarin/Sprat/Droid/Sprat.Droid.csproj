@@ -13,7 +13,7 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>Sprat.Droid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -122,6 +122,46 @@
     <AndroidResource Include="Resources\drawable\C_Eight.bmp" />
     <AndroidResource Include="Resources\drawable\C_Ace.bmp" />
     <AndroidResource Include="Resources\drawable\a53.bmp" />
+    <AndroidResource Include="Resources\drawable\Player1.jpg" />
+    <AndroidResource Include="Resources\drawable\Player2.jpg" />
+    <AndroidResource Include="Resources\drawable\Player3.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Player1.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Player2.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Player3.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\a53.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Ace.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Eight.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Jack.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_King.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Nine.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Queen.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Seven.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\C_Ten.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Ace.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Eight.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Jack.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_King.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Nine.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Queen.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Seven.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\D_Ten.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Ace.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Eight.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Jack.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_King.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Nine.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Queen.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Seven.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\H_Ten.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Ace.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Eight.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Jack.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_King.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Nine.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Queen.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Seven.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\S_Ten.bmp" />
+    <AndroidResource Include="Resources\drawable-xhdpi\a52.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets')" />

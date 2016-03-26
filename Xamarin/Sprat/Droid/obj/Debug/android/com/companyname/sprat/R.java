@@ -39,14 +39,17 @@ public final class R {
         public static final int h_ten=0x7f020019;
         public static final int icon=0x7f02001a;
         public static final int monoandroidsplash=0x7f02001b;
-        public static final int s_ace=0x7f02001c;
-        public static final int s_eight=0x7f02001d;
-        public static final int s_jack=0x7f02001e;
-        public static final int s_king=0x7f02001f;
-        public static final int s_nine=0x7f020020;
-        public static final int s_queen=0x7f020021;
-        public static final int s_seven=0x7f020022;
-        public static final int s_ten=0x7f020023;
+        public static final int player1=0x7f02001c;
+        public static final int player2=0x7f02001d;
+        public static final int player3=0x7f02001e;
+        public static final int s_ace=0x7f02001f;
+        public static final int s_eight=0x7f020020;
+        public static final int s_jack=0x7f020021;
+        public static final int s_king=0x7f020022;
+        public static final int s_nine=0x7f020023;
+        public static final int s_queen=0x7f020024;
+        public static final int s_seven=0x7f020025;
+        public static final int s_ten=0x7f020026;
     }
     public static final class style {
         public static final int Mono_Android_Theme_Splash=0x7f030000;

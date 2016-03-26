@@ -12,7 +12,7 @@ namespace Sprat
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new GamePage();
+			MainPage = new NewPage();
 		}
 
 		protected override void OnStart ()

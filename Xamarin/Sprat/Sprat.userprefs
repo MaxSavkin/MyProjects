@@ -1,15 +1,21 @@
 ﻿<Properties StartupItem="Droid\Sprat.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.AVD_for_3_4_WQVGA" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sprat\Card.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sprat\NewPage.xaml.cs">
     <Files>
-      <File FileName="Sprat\Game.cs" Line="1" Column="1" />
-      <File FileName="Sprat\Card.cs" Line="15" Column="3" />
-      <File FileName="Sprat\GamePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Sprat\Game.cs" Line="16" Column="3" />
+      <File FileName="Sprat\Card.cs" Line="1" Column="1" />
+      <File FileName="Sprat\GamePage.xaml.cs" Line="101" Column="25" />
       <File FileName="Sprat\Player.cs" Line="1" Column="1" />
+      <File FileName="Sprat\GamePage.xaml" Line="4" Column="2" />
+      <File FileName="Sprat\Sprat.cs" Line="15" Column="29" />
+      <File FileName="Sprat\NewPage.xaml" Line="31" Column="54" />
+      <File FileName="Sprat\NewPage.xaml.cs" Line="17" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\NewPage.xaml.cs" line="19" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

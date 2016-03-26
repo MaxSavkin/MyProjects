@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Sprat.NewPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="0, 0, 0, 0" WinPhone="0, 0, 0, 0" />
+	</ContentPage.Padding>
+	<ContentView>
+		<Grid x:Name="mainGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="3*" />
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="8*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Label Text="Кильки" Grid.Row="0" Grid.Column="1" HorizontalOptions = "Center" VerticalOptions = "Center" Font="Bold, Large" TextColor="Accent" />
+			<Grid x:Name = "secondGrid" Grid.Row = "1" Grid.Column="1" VerticalOptions = "End">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0" />
+					<RowDefinition Height="1*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<StackLayout Grid.Row="1" Grid.Column="0" Spacing = "0" VerticalOptions = "End">
+					<Label x:Name = "label" Text = "Юра" HorizontalOptions = "Center"/>
+					<Image Source = "Player1.jpg" HorizontalOptions = "Center"/>
+					<Label Text = "0" HorizontalOptions = "Center"/>
+				</StackLayout>
+				<StackLayout Grid.Row="1" Grid.Column="1" Spacing = "0" VerticalOptions = "End">
+					<Label Text = "Вова" HorizontalOptions = "Center"/>
+					<Image Source = "Player2.jpg" HorizontalOptions = "Center"/>
+					<Label Text = "0" HorizontalOptions = "Center"/>
+				</StackLayout>
+				<StackLayout Grid.Row="1" Grid.Column="2" Spacing = "0" VerticalOptions = "End">
+					<Label Text = "Рома" HorizontalOptions = "Center"/>
+					<Image Source = "Player3.jpg" HorizontalOptions = "Center"/>
+					<Label Text = "0" HorizontalOptions = "Center"/>
+				</StackLayout>
+			</Grid>
+			<Grid x:Name = "thirdGrid" Grid.Row = "2" Grid.Column="1" VerticalOptions = "Start">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0" />
+					<RowDefinition Height="1*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid Grid.Row="1" Grid.Column="0" VerticalOptions = "Start" >
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "-30"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "0"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "30"/>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "-30"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "0"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "30"/>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="2">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "-30"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "0"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "30"/>
+				</Grid>
+			</Grid>
+		</Grid>
+	</ContentView>
+</ContentPage>

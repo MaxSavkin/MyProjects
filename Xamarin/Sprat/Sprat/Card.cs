@@ -11,7 +11,7 @@ namespace Sprat
 		public Suit Suit { get; set; }
 		public Number Number { get; set; }
 
-		public Image CardImage, CloseCardImage;
+		public Image CardImage;
 
 		public Card(Suit suit, Number number)
 		{
@@ -23,7 +23,6 @@ namespace Sprat
 		public void SetCardImage(Suit newSuit, Number newNumber)
 		{
 			CardImage = new Image (){ Source = string.Format ("{0}_{1}.bmp", newSuit.ToString ().Substring (0, 1), newNumber.ToString ()) };
-			CloseCardImage = new Image (){ Source = "a52.bmp" };
 			this.Content = CardImage;
 		}
 

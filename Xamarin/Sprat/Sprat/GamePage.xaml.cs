@@ -101,9 +101,10 @@ namespace Sprat
 					switch (res.Item1) 
 					{
 					case 0:
-						AbsoluteLayout.SetLayoutFlags (res.Item2, AbsoluteLayoutFlags.PositionProportional);
-						AbsoluteLayout.SetLayoutBounds (res.Item2, 
-							new Rectangle (0.5, 0.7, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
+						res.Item2.TranslateTo (-100, 100);
+						//AbsoluteLayout.SetLayoutFlags (res.Item2, AbsoluteLayoutFlags.PositionProportional);
+						//AbsoluteLayout.SetLayoutBounds (res.Item2, 
+						//	new Rectangle (0.5, 0.7, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 						break;
 					case 1:
 						AbsoluteLayout.SetLayoutFlags (res.Item2, AbsoluteLayoutFlags.PositionProportional);
