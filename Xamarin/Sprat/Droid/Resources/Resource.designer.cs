@@ -129,37 +129,40 @@ namespace Sprat.Droid
 			public const int monoandroidsplash = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int Player1 = 2130837532;
+			public const int Player0 = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int Player2 = 2130837533;
+			public const int Player1 = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int Player3 = 2130837534;
+			public const int Player2 = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int S_Ace = 2130837535;
+			public const int Player3 = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int S_Eight = 2130837536;
+			public const int S_Ace = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int S_Jack = 2130837537;
+			public const int S_Eight = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int S_King = 2130837538;
+			public const int S_Jack = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int S_Nine = 2130837539;
+			public const int S_King = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int S_Queen = 2130837540;
+			public const int S_Nine = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int S_Seven = 2130837541;
+			public const int S_Queen = 2130837541;
 			
 			// aapt resource value: 0x7f020026
-			public const int S_Ten = 2130837542;
+			public const int S_Seven = 2130837542;
+			
+			// aapt resource value: 0x7f020027
+			public const int S_Ten = 2130837543;
 			
 			static Drawable()
 			{

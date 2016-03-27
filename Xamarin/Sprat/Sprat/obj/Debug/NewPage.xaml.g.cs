@@ -24,12 +24,21 @@ namespace Sprat {
         
         private Grid thirdGrid;
         
+        private Grid fordGrid;
+        
+        private Grid Grid5;
+        
+        private Grid Grid6;
+        
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(NewPage));
             mainGrid = this.FindByName<Grid>("mainGrid");
             secondGrid = this.FindByName<Grid>("secondGrid");
             label = this.FindByName<Label>("label");
             thirdGrid = this.FindByName<Grid>("thirdGrid");
+            fordGrid = this.FindByName<Grid>("fordGrid");
+            Grid5 = this.FindByName<Grid>("Grid5");
+            Grid6 = this.FindByName<Grid>("Grid6");
         }
     }
 }

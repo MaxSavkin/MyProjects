@@ -162,6 +162,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\S_Seven.bmp" />
     <AndroidResource Include="Resources\drawable-xhdpi\S_Ten.bmp" />
     <AndroidResource Include="Resources\drawable-xhdpi\a52.bmp" />
+    <AndroidResource Include="Resources\drawable\Player0.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Player0.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets')" />

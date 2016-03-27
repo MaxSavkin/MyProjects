@@ -8,8 +8,8 @@ namespace Sprat
 {
 	public class Game
 	{
-		public const int PeopleCount = 4;
-		public const int CardsCount = 32;
+		public int PeopleCount = 4;
+		public int CardsCount = 32;
 		public int StepInRoundCount = 8;
 
 		public List<Player> Players;

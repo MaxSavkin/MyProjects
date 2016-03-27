@@ -227,6 +227,8 @@ C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhd
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\s_queen.bmp
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\s_seven.bmp
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\s_ten.bmp
+C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\player0.jpg
+C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\player0.jpg
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.dll.mdb
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.dll.mdb
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.dll.mdb

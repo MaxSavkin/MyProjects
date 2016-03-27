@@ -86,7 +86,57 @@
 					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "0"/>
 					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "30"/>
 				</Grid>
-			</Grid>
+			</Grid> 
+			<Grid x:Name = "fordGrid" Grid.Row = "3" Grid.Column="1" VerticalOptions = "Start">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0" />
+					<RowDefinition Height="1*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+			</Grid> 
+			<Grid x:Name = "Grid5" Grid.Row = "4" Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="3*" />
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="2*" />
+					<RowDefinition Height="2*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="2*" />
+					<ColumnDefinition Width="8*" />
+				</Grid.ColumnDefinitions>
+				<StackLayout Grid.Row = "0" Grid.Column="0" Spacing = "0" HorizontalOptions = "Center" VerticalOptions = "Center">
+					<Label Text = "Козырь" HorizontalOptions = "Center"/>
+					<Image Source = "a52.bmp" HorizontalOptions = "Center"/>
+					<Label Text = "Нет" HorizontalOptions = "Center"/>
+				</StackLayout>
+				<StackLayout Grid.Row = "2" Grid.Column="0" Spacing = "0" HorizontalOptions = "Center" VerticalOptions = "Center">
+					<Label Text = "Максим" HorizontalOptions = "Center"/>
+					<Image Source = "Player0.jpg" HorizontalOptions = "Center"/>
+					<Label Text = "0" HorizontalOptions = "Center"/>
+				</StackLayout> 
+				<Grid x:Name = "Grid6" Grid.Row = "3" Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0" />
+						<RowDefinition Height="1*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+				</Grid>
+			</Grid> 
+
 		</Grid>
 	</ContentView>
 </ContentPage>
