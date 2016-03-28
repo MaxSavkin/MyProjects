@@ -19,7 +19,7 @@ namespace Sprat
 		public List<Card> CardsOfCurrStep;
 		public int FPStep;
 		public int FPRound;
-		public int cnt = 0;
+		public int cnt { get; private set;}
 		public Suit TrumpSuit;
 
 		public Game()
@@ -28,19 +28,7 @@ namespace Sprat
 			CardsOfCurrStep = new List<Card>();
 			CreatePlayers();
 			TrumpSuit = 0;
-		}
-
-		public void DoStep()
-		{
-			for (int i = FPStep + 1; i <= FPStep + 4; i++) 
-			{
-				CardsOfCurrStep.Add (Players [i % PeopleCount].DoStep (CardsOfCurrStep, Step / StepInRoundCount, Step % StepInRoundCount));
-				CardsOfCurrStep.Last ().SetCardImageNull ();
-			}
-
-			int WinPlayer = (new Random()).Next(4);
-			Players[WinPlayer].BribeCards.AddRange(CardsOfCurrStep);
-			Init2NextStep();
+			cnt = 0;
 		}
 
 		public Tuple<int, Card> DoStep2()
@@ -55,14 +43,9 @@ namespace Sprat
 			}
 			else
 			{
-				cnt = 0;
-				foreach (var card in CardsOfCurrStep)
-					card.SetCardImageNull ();
 				int WinPlayer = GetWinPlayer ();
 				FPStep = WinPlayer;
-				Players [WinPlayer].BribeCards.AddRange (CardsOfCurrStep);
-				Players [WinPlayer].UpdateScore (Step / StepInRoundCount, Step % StepInRoundCount);
-				Init2NextStep ();
+				Players [WinPlayer].UpdateScore (Step / StepInRoundCount, Step % StepInRoundCount, CardsOfCurrStep);
 				return new Tuple<int, Card> (WinPlayer, null);
 			}
 		}
@@ -71,6 +54,7 @@ namespace Sprat
 		{
 			Step++;
 			CardsOfCurrStep.Clear();
+			cnt = 0;
 
 			if (Step % StepInRoundCount == 0)
 			{

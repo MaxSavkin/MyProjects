@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace Sprat
 {
@@ -10,6 +11,7 @@ namespace Sprat
 		public Game game;
 		public int counter = 0;
 		int Round = 0;
+		int FpStep = 0;
 		public NewPage ()
 		{
 			InitializeComponent ();
@@ -27,8 +29,11 @@ namespace Sprat
 			game = new Game ();
 
 			for (int i = 1; i < game.PeopleCount; i++)
-				for (int j = 0; j < game.StepInRoundCount; j++)
+				for (int j = 0; j < game.StepInRoundCount; j++) 
+				{
 					fordGrid.Children.Add (game.Players [i].Cards [j].Content, i - 1, 1);
+					game.Players [i].Cards [j].Content.IsVisible = false;
+				}
 
 			for (int i = 0; i < game.StepInRoundCount; i++)
 				Grid6.Children.Add (game.Players [0].Cards [i].Content, i, 1);
@@ -36,29 +41,29 @@ namespace Sprat
 
 		public void OnDoubleTup(object sender, EventArgs e)
 		{
+			Tuple<int, Card> res;
 			if (!(game.Step > 0 && game.Step % game.StepInRoundCount == 0 && Round < game.Step / game.StepInRoundCount)) 
 			{
-				counter++;
+				res = game.DoStep2 ();
 
-				var res = game.DoStep2 ();
-
-				if (counter <= 4) 
+				if (game.cnt <= 4) 
 				{
+					FpStep = game.FPStep;
 					switch (res.Item1) 
 					{
 					case 0:
 						res.Item2.Content.TranslateTo (0, -100);
-						//AbsoluteLayout.SetLayoutFlags (res.Item2, AbsoluteLayoutFlags.PositionProportional);
-						//AbsoluteLayout.SetLayoutBounds (res.Item2, 
-						//	new Rectangle (0.5, 0.7, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 						break;
 					case 1:
+						res.Item2.Content.IsVisible = true;
 						res.Item2.Content.TranslateTo (50, 50);
 						break;
 					case 2:
+						res.Item2.Content.IsVisible = true;
 						res.Item2.Content.TranslateTo (0, 50);
 						break;
 					case 3:
+						res.Item2.Content.IsVisible = true;
 						res.Item2.Content.TranslateTo (-50, 50);
 						break;
 					default:
@@ -67,7 +72,8 @@ namespace Sprat
 				} 
 				else 
 				{
-					counter = 0;
+					ToStartPos (FpStep);
+					game.Init2NextStep ();
 				}
 			} 
 			else 
@@ -79,6 +85,34 @@ namespace Sprat
 					int t = (new Random ()).Next (4);
 					game.TrumpSuit = (Suit)t;
 				}
+			}
+		}
+
+		public void ToStartPos (int FpStep)
+		{
+			for (int i = 0; i < game.PeopleCount; i++) 
+			{
+				switch ((i + FpStep) % game.PeopleCount) 
+				{
+				case 0:
+					game.CardsOfCurrStep[0].Content.TranslateTo (0, 100);
+					game.CardsOfCurrStep[0].Content.IsVisible = false;
+					break;
+				case 1:
+					game.CardsOfCurrStep[1].Content.TranslateTo (-50, -50);
+					game.CardsOfCurrStep[1].Content.IsVisible = false;
+					break;
+				case 2:
+					game.CardsOfCurrStep[2].Content.TranslateTo (0, -50);
+					game.CardsOfCurrStep[2].Content.IsVisible = false;
+					break;
+				case 3:
+					game.CardsOfCurrStep[3].Content.TranslateTo (50, -50);
+					game.CardsOfCurrStep[3].Content.IsVisible = false;
+					break;
+				default:
+					break;
+				}	
 			}
 		}
 

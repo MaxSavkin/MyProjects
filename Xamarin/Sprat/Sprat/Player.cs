@@ -7,7 +7,6 @@ namespace Sprat
 	public class Player
 	{
 		public List<Card> Cards;
-		public List<Card> BribeCards { get; set; }
 		public int Score { get; set; }
 		private Random rand;
 
@@ -15,13 +14,11 @@ namespace Sprat
 		{
 			this.Cards = Cards;
 			Score = 0;
-			BribeCards = new List<Card>();
 			rand = new Random ();
 		}
 
 		public void InitToNextRound(List<Card> Cards)
 		{
-			BribeCards = new List<Card>();
 			this.Cards = Cards;
 		}
 
@@ -415,34 +412,28 @@ namespace Sprat
 			return CardToReturn;
 		}
 
-		public void UpdateScore(int Round, int Step)
+		public void UpdateScore(int Round, int Step, List<Card> CurrCards)
 		{
 			switch(Round)
 			{
 			case 0:
-				Score += 2 * BribeCards.Count / 4;
-				BribeCards.Clear ();
+				Score += 2 * CurrCards.Count / 4;
 				break;
 			case 1:
-				Score += 2 * BribeCards.Where(x => x.Suit == Suit.Heart).Count();
-				BribeCards.Clear ();
+				Score += 2 * CurrCards.Where(x => x.Suit == Suit.Heart).Count();
 				break;
 			case 2:
-				Score += 2 * BribeCards.Where(x => x.Number == Number.Jack || x.Number == Number.King).Count();
-				BribeCards.Clear ();
+				Score += 2 * CurrCards.Where(x => x.Number == Number.Jack || x.Number == Number.King).Count();
 				break;
 			case 3:
-				Score += 4 * BribeCards.Where(x => x.Number == Number.Queen).Count();
-				BribeCards.Clear ();
+				Score += 4 * CurrCards.Where(x => x.Number == Number.Queen).Count();
 				break;
 			case 4:
 				if (Step == 6 || Step == 7)
 					Score += 8;
-				BribeCards.Clear ();
 				break;
 			case 5:
-				Score += 16 * BribeCards.Where(x => x.Number == Number.King && x.Suit == Suit.Heart).Count();
-				BribeCards.Clear ();
+				Score += 16 * CurrCards.Where(x => x.Number == Number.King && x.Suit == Suit.Heart).Count();
 				break;
 			case 6:
 			case 7:

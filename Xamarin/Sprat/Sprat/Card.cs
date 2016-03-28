@@ -10,8 +10,7 @@ namespace Sprat
 	{
 		public Suit Suit { get; set; }
 		public Number Number { get; set; }
-
-		public Image CardImage;
+		private Image CardImage;
 
 		public Card(Suit suit, Number number)
 		{
