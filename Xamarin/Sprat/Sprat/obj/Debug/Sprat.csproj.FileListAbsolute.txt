@@ -39,7 +39,6 @@ D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Xamarin.Insights.dll
 D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Xamarin.Forms.Core.xml
 D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Xamarin.Insights.xml
-D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.csprojResolveAssemblyReference.cache
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\StartPage.xaml.g.cs
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\SettingsPage.xaml.g.cs
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\GamePage.xaml.g.cs

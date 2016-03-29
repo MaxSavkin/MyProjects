@@ -16,18 +16,15 @@ namespace Sprat
 		{
 			InitializeComponent ();
 			game = new Game ();
-
 			Init ();
-
 			TapGestureRecognizer doubleTup = new TapGestureRecognizer () { NumberOfTapsRequired = 1 };
 			doubleTup.Tapped += OnDoubleTup;
 			this.Content.GestureRecognizers.Add (doubleTup);
+
 		}
 
 		public void Init()
 		{
-			game = new Game ();
-
 			for (int i = 1; i < game.PeopleCount; i++)
 				for (int j = 0; j < game.StepInRoundCount; j++) 
 				{
@@ -72,12 +69,32 @@ namespace Sprat
 				} 
 				else 
 				{
-					ToStartPos (FpStep);
+					foreach (var elem in game.CardsOfCurrStep)
+						elem.Content.IsVisible = false;
 					game.Init2NextStep ();
+
+					switch (game.WinPlayer) 
+					{
+					case 0:
+						Score0.Text = game.Players [0].Score.ToString();
+						break;
+					case 1:
+						Score1.Text = game.Players [1].Score.ToString();
+						break;
+					case 2:
+						Score2.Text = game.Players [2].Score.ToString();
+						break;
+					case 3:
+						Score3.Text = game.Players [3].Score.ToString();
+						break;
+					}
 				}
 			} 
 			else 
 			{
+				fordGrid.Children.Clear ();
+				Grid6.Children.Clear ();
+				Init ();
 				game.FPRound++;
 				game.FPStep = game.FPRound;
 				Round++;
@@ -85,34 +102,6 @@ namespace Sprat
 					int t = (new Random ()).Next (4);
 					game.TrumpSuit = (Suit)t;
 				}
-			}
-		}
-
-		public void ToStartPos (int FpStep)
-		{
-			for (int i = 0; i < game.PeopleCount; i++) 
-			{
-				switch ((i + FpStep) % game.PeopleCount) 
-				{
-				case 0:
-					game.CardsOfCurrStep[0].Content.TranslateTo (0, 100);
-					game.CardsOfCurrStep[0].Content.IsVisible = false;
-					break;
-				case 1:
-					game.CardsOfCurrStep[1].Content.TranslateTo (-50, -50);
-					game.CardsOfCurrStep[1].Content.IsVisible = false;
-					break;
-				case 2:
-					game.CardsOfCurrStep[2].Content.TranslateTo (0, -50);
-					game.CardsOfCurrStep[2].Content.IsVisible = false;
-					break;
-				case 3:
-					game.CardsOfCurrStep[3].Content.TranslateTo (50, -50);
-					game.CardsOfCurrStep[3].Content.IsVisible = false;
-					break;
-				default:
-					break;
-				}	
 			}
 		}
 

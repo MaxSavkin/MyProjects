@@ -24,12 +24,6 @@ namespace Sprat
 			CardImage = new Image (){ Source = string.Format ("{0}_{1}.bmp", newSuit.ToString ().Substring (0, 1), newNumber.ToString ()) };
 			this.Content = CardImage;
 		}
-
-		public void SetCardImageNull()
-		{
-			this.Content = null;
-		}
-
 	}
 }
 

@@ -17,9 +17,9 @@ namespace Sprat
 			rand = new Random ();
 		}
 
-		public void InitToNextRound(List<Card> Cards)
+		public void InitToNextRound(List<Card> cards)
 		{
-			this.Cards = Cards;
+			this.Cards = cards;
 		}
 
 		public Card DoStep(List<Card> CardsList, int Round, int Step, Suit trumpSuit = Suit.Diamond)

@@ -20,13 +20,14 @@ namespace Sprat
 		public int FPStep;
 		public int FPRound;
 		public int cnt { get; private set;}
+		public int WinPlayer { get; private set;}
 		public Suit TrumpSuit;
 
 		public Game()
 		{
 			Step = 0;
 			CardsOfCurrStep = new List<Card>();
-			CreatePlayers();
+			Init();
 			TrumpSuit = 0;
 			cnt = 0;
 		}
@@ -41,13 +42,11 @@ namespace Sprat
 				CardsOfCurrStep.Add (Card2Return);
 				return new Tuple<int, Card> ((FPStep + cnt - 1) % PeopleCount, Card2Return);
 			}
-			else
-			{
-				int WinPlayer = GetWinPlayer ();
-				FPStep = WinPlayer;
-				Players [WinPlayer].UpdateScore (Step / StepInRoundCount, Step % StepInRoundCount, CardsOfCurrStep);
-				return new Tuple<int, Card> (WinPlayer, null);
-			}
+
+			WinPlayer = GetWinPlayer ();
+			FPStep = WinPlayer;
+			Players [WinPlayer].UpdateScore (Step / StepInRoundCount, Step % StepInRoundCount, CardsOfCurrStep);
+			return new Tuple<int, Card> (WinPlayer, null);
 		}
 
 		public void Init2NextStep()
@@ -68,7 +67,7 @@ namespace Sprat
 			}
 		}
 
-		private void CreatePlayers()
+		private void Init()
 		{
 			Players = new List<Player>();
 			List<Card> Cards = new List<Card>();

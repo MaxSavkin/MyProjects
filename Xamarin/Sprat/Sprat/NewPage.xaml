@@ -30,17 +30,17 @@
 				<StackLayout Grid.Row="1" Grid.Column="0" Spacing = "0" VerticalOptions = "End">
 					<Label x:Name = "label" Text = "Юра" HorizontalOptions = "Center"/>
 					<Image Source = "Player1.jpg" HorizontalOptions = "Center"/>
-					<Label Text = "0" HorizontalOptions = "Center"/>
+					<Label x:Name = "Score1" Text = "0" HorizontalOptions = "Center"/>
 				</StackLayout>
 				<StackLayout Grid.Row="1" Grid.Column="1" Spacing = "0" VerticalOptions = "End">
 					<Label Text = "Вова" HorizontalOptions = "Center"/>
 					<Image Source = "Player2.jpg" HorizontalOptions = "Center"/>
-					<Label Text = "0" HorizontalOptions = "Center"/>
+					<Label x:Name = "Score2" Text = "0" HorizontalOptions = "Center"/>
 				</StackLayout>
 				<StackLayout Grid.Row="1" Grid.Column="2" Spacing = "0" VerticalOptions = "End">
 					<Label Text = "Рома" HorizontalOptions = "Center"/>
 					<Image Source = "Player3.jpg" HorizontalOptions = "Center"/>
-					<Label Text = "0" HorizontalOptions = "Center"/>
+					<Label x:Name = "Score3" Text = "0" HorizontalOptions = "Center"/>
 				</StackLayout>
 			</Grid>
 			<Grid x:Name = "thirdGrid" Grid.Row = "2" Grid.Column="1" VerticalOptions = "Start">
@@ -102,7 +102,7 @@
 				<Grid.RowDefinitions>
 					<RowDefinition Height="3*" />
 					<RowDefinition Height="1*" />
-					<RowDefinition Height="2*" />
+					<RowDefinition Height="3*" />
 					<RowDefinition Height="2*" />
 				</Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
@@ -117,7 +117,7 @@
 				<StackLayout Grid.Row = "2" Grid.Column="0" Spacing = "0" HorizontalOptions = "Center" VerticalOptions = "Center">
 					<Label Text = "Максим" HorizontalOptions = "Center"/>
 					<Image Source = "Player0.jpg" HorizontalOptions = "Center"/>
-					<Label Text = "0" HorizontalOptions = "Center"/>
+					<Label x:Name = "Score0" Text = "0" HorizontalOptions = "Center"/>
 				</StackLayout> 
 				<Grid x:Name = "Grid6" Grid.Row = "3" Grid.Column="1">
 					<Grid.RowDefinitions>
