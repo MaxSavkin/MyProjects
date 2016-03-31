@@ -30,13 +30,9 @@ namespace Sprat {
         
         private Grid thirdGrid;
         
-        private Grid fordGrid;
-        
-        private Grid Grid5;
+        private AbsoluteLayout absoluteLayout;
         
         private Label Score0;
-        
-        private Grid Grid6;
         
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(NewPage));
@@ -47,10 +43,8 @@ namespace Sprat {
             Score2 = this.FindByName<Label>("Score2");
             Score3 = this.FindByName<Label>("Score3");
             thirdGrid = this.FindByName<Grid>("thirdGrid");
-            fordGrid = this.FindByName<Grid>("fordGrid");
-            Grid5 = this.FindByName<Grid>("Grid5");
+            absoluteLayout = this.FindByName<AbsoluteLayout>("absoluteLayout");
             Score0 = this.FindByName<Label>("Score0");
-            Grid6 = this.FindByName<Grid>("Grid6");
         }
     }
 }

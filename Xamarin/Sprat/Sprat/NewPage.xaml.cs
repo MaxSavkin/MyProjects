@@ -12,6 +12,8 @@ namespace Sprat
 		public int counter = 0;
 		int Round = 0;
 		int FpStep = 0;
+		double width;
+		double height;
 		public NewPage ()
 		{
 			InitializeComponent ();
@@ -21,23 +23,30 @@ namespace Sprat
 			doubleTup.Tapped += OnDoubleTup;
 			this.Content.GestureRecognizers.Add (doubleTup);
 
+			this.Content.SizeChanged += OnStackSizeChanged; 
+
 		}
 
 		public void Init()
 		{
-			for (int i = 1; i < game.PeopleCount; i++)
+			/*for (int i = 1; i < game.PeopleCount; i++)
 				for (int j = 0; j < game.StepInRoundCount; j++) 
 				{
 					fordGrid.Children.Add (game.Players [i].Cards [j].Content, i - 1, 1);
 					game.Players [i].Cards [j].Content.IsVisible = false;
-				}
+				}*/
 
-			for (int i = 0; i < game.StepInRoundCount; i++)
-				Grid6.Children.Add (game.Players [0].Cards [i].Content, i, 1);
+			/*for (int i = 0; i < 2; i++) 
+			{
+				absoluteLayout.Children.Add (game.Players [0].Cards [i]);
+				AbsoluteLayout.SetLayoutFlags (game.Players [0].Cards [i], AbsoluteLayoutFlags.All);
+				AbsoluteLayout.SetLayoutBounds (game.Players [0].Cards [i], new Rectangle (0.2 + (double)i/10, 0.8, 0.3, 0.3));
+			}*/
 		}
 
 		public void OnDoubleTup(object sender, EventArgs e)
 		{
+			
 			Tuple<int, Card> res;
 			if (!(game.Step > 0 && game.Step % game.StepInRoundCount == 0 && Round < game.Step / game.StepInRoundCount)) 
 			{
@@ -76,7 +85,7 @@ namespace Sprat
 					switch (game.WinPlayer) 
 					{
 					case 0:
-						Score0.Text = game.Players [0].Score.ToString();
+						//Score0.Text = game.Players [0].Score.ToString();
 						break;
 					case 1:
 						Score1.Text = game.Players [1].Score.ToString();
@@ -92,8 +101,8 @@ namespace Sprat
 			} 
 			else 
 			{
-				fordGrid.Children.Clear ();
-				Grid6.Children.Clear ();
+				//fordGrid.Children.Clear ();
+				//Grid6.Children.Clear ();
 				Init ();
 				game.FPRound++;
 				game.FPStep = game.FPRound;
@@ -102,6 +111,21 @@ namespace Sprat
 					int t = (new Random ()).Next (4);
 					game.TrumpSuit = (Suit)t;
 				}
+			}
+		}
+
+		void OnStackSizeChanged (object sender, EventArgs args)
+		{
+			width = this.absoluteLayout.Width;
+			height = this.absoluteLayout.Height;
+			var res = game.Players [0].Cards [0].Content.Height;
+			var asd = App.ScreenWidth;
+			for (int i = 0; i < game.StepInRoundCount; i++) 
+			{
+				absoluteLayout.Children.Add (game.Players [0].Cards [i], new Point {
+					X = (2 + i) * width / 10,
+					Y = height - 80
+				});
 			}
 		}
 
