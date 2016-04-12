@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprat", "Sprat\Sprat.csproj", "{6372FE3A-A8AB-4AA4-8B3C-84AC88498533}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprat.Droid", "Droid\Sprat.Droid.csproj", "{494967B5-15E5-4C08-805C-6AC7DC084252}"
@@ -11,13 +13,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{494967B5-15E5-4C08-805C-6AC7DC084252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{494967B5-15E5-4C08-805C-6AC7DC084252}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{494967B5-15E5-4C08-805C-6AC7DC084252}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{494967B5-15E5-4C08-805C-6AC7DC084252}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6372FE3A-A8AB-4AA4-8B3C-84AC88498533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6372FE3A-A8AB-4AA4-8B3C-84AC88498533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6372FE3A-A8AB-4AA4-8B3C-84AC88498533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6372FE3A-A8AB-4AA4-8B3C-84AC88498533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{494967B5-15E5-4C08-805C-6AC7DC084252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494967B5-15E5-4C08-805C-6AC7DC084252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494967B5-15E5-4C08-805C-6AC7DC084252}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{494967B5-15E5-4C08-805C-6AC7DC084252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494967B5-15E5-4C08-805C-6AC7DC084252}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

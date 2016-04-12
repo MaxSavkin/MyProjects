@@ -35,18 +35,10 @@ namespace Sprat
 					fordGrid.Children.Add (game.Players [i].Cards [j].Content, i - 1, 1);
 					game.Players [i].Cards [j].Content.IsVisible = false;
 				}*/
-
-			/*for (int i = 0; i < 2; i++) 
-			{
-				absoluteLayout.Children.Add (game.Players [0].Cards [i]);
-				AbsoluteLayout.SetLayoutFlags (game.Players [0].Cards [i], AbsoluteLayoutFlags.All);
-				AbsoluteLayout.SetLayoutBounds (game.Players [0].Cards [i], new Rectangle (0.2 + (double)i/10, 0.8, 0.3, 0.3));
-			}*/
 		}
 
 		public void OnDoubleTup(object sender, EventArgs e)
 		{
-			
 			Tuple<int, Card> res;
 			if (!(game.Step > 0 && game.Step % game.StepInRoundCount == 0 && Round < game.Step / game.StepInRoundCount)) 
 			{
@@ -58,19 +50,19 @@ namespace Sprat
 					switch (res.Item1) 
 					{
 					case 0:
-						res.Item2.Content.TranslateTo (0, -100);
+                        res.Item2.TranslateTo(App.ScreenWidth * 7 / 12 - res.Item2.X - Card.CWidth / 2, -100);
 						break;
 					case 1:
-						res.Item2.Content.IsVisible = true;
-						res.Item2.Content.TranslateTo (50, 50);
+						res.Item2.IsVisible = true;
+						res.Item2.TranslateTo (50, 50);
 						break;
 					case 2:
-						res.Item2.Content.IsVisible = true;
-						res.Item2.Content.TranslateTo (0, 50);
+						res.Item2.IsVisible = true;
+						res.Item2.TranslateTo (0, 50);
 						break;
 					case 3:
-						res.Item2.Content.IsVisible = true;
-						res.Item2.Content.TranslateTo (-50, 50);
+						res.Item2.IsVisible = true;
+						res.Item2.TranslateTo (-50, 50);
 						break;
 					default:
 						break;
@@ -122,13 +114,26 @@ namespace Sprat
 			var asd = App.ScreenWidth;
 			for (int i = 0; i < game.StepInRoundCount; i++) 
 			{
-				absoluteLayout.Children.Add (game.Players [0].Cards [i], new Point {
-					X = (2 + i) * width / 10,
-					Y = height - 80
-				});
+                AbsoluteLayout.SetLayoutFlags(game.Players[0].Cards[i], AbsoluteLayoutFlags.None);
+                AbsoluteLayout.SetLayoutBounds(game.Players[0].Cards[i], new Rectangle((i + 2) * absoluteLayout.Width / 10, this.absoluteLayout.Height - 60, absoluteLayout.Width / 10, 60));
+                absoluteLayout.Children.Add(game.Players[0].Cards[i]);
 			}
-		}
 
-	}
+            Card.CHeight = game.Players[0].Cards[0].Height;
+            Card.CWidth = game.Players[0].Cards[0].Width;
+
+            for (int i = 1; i < game.PeopleCount; i++)
+				for (int j = 0; j < game.StepInRoundCount; j++) 
+				{
+                    AbsoluteLayout.SetLayoutFlags(game.Players[i].Cards[j], AbsoluteLayoutFlags.None);
+                    AbsoluteLayout.SetLayoutBounds(game.Players[i].Cards[j], new Rectangle(i * absoluteLayout.Width / 3 - absoluteLayout.Width / 6 - Card.CWidth / 2,
+                        this.absoluteLayout.X, Card.CWidth, Card.CHeight));
+                    absoluteLayout.Children.Add(game.Players[i].Cards[j]);
+                    //game.Players [i].Cards [j].IsVisible = false;
+				}
+
+        }
+
+    }
 }
 

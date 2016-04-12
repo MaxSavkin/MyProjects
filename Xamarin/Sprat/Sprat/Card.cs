@@ -8,6 +8,8 @@ namespace Sprat
 
 	public class Card : Frame
 	{
+        public static double CHeight = 0;
+        public static double CWidth = 0;
 		public Suit Suit { get; set; }
 		public Number Number { get; set; }
 		private Image CardImage;
@@ -22,6 +24,7 @@ namespace Sprat
 		public void SetCardImage(Suit newSuit, Number newNumber)
 		{
 			CardImage = new Image (){ Source = string.Format ("{0}_{1}.bmp", newSuit.ToString ().Substring (0, 1), newNumber.ToString ()) };
+            this.Padding = new Thickness(0, 0, 0, 0);
 			this.Content = CardImage;
 		}
 	}

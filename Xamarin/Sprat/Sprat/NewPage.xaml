@@ -86,7 +86,7 @@
 					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "30"/>
 				</Grid>
 			</Grid> 
-			<AbsoluteLayout x:Name = "absoluteLayout" Grid.Row = "3" Grid.Column="1" BackgroundColor = "Green">
+			<AbsoluteLayout x:Name = "absoluteLayout" Grid.Row = "3" Grid.Column="1">
 				<StackLayout VerticalOptions = "Center"
 				AbsoluteLayout.LayoutBounds="0, 0.2, 0.2, 0.5" AbsoluteLayout.LayoutFlags="All">
 					<Label Text = "Козырь" HorizontalOptions = "Center"/>
