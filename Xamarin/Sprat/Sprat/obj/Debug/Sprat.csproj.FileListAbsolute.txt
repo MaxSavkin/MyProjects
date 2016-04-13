@@ -28,8 +28,6 @@ D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\GamePage.xaml.g.cs
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\NewPage.xaml.g.cs
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.pdb
-D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll.mdb
-D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll.mdb
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.pdb
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Xamarin.Forms.Core.dll
@@ -47,5 +45,6 @@ C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.pdb
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.csprojResolveAssemblyReference.cache
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll.mdb
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll.mdb
-C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll.mdb
-C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll.mdb
+D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.csprojResolveAssemblyReference.cache
+D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll.mdb
+D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll.mdb
