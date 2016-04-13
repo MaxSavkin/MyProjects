@@ -28,7 +28,7 @@ namespace Sprat
 		}
 		public void OnSingleTupG(object sender, EventArgs e)
 		{
-			this.Navigation.PushModalAsync (new GamePage());
+			this.Navigation.PushModalAsync (new NewPage());
 		}
 	}
 }

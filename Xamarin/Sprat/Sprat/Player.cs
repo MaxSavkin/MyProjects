@@ -1,13 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 
 namespace Sprat
 {
-	public class Player
+	public class Player : INotifyPropertyChanged
 	{
 		public List<Card> Cards;
-		public int Score { get; set; }
+		private int score { get; set; }
+        public int Score
+        {
+            get { return score; }
+            set
+            {
+                if (score != value)
+                {
+                    score = value;
+                    OnPropertyChanged("Score");
+                }
+            }
+        }
+
 		private Random rand;
 
 		public Player(List<Card> Cards)
@@ -24,6 +38,7 @@ namespace Sprat
 
 		public Card DoStep(List<Card> CardsList, int Round, int Step, Suit trumpSuit = Suit.Diamond)
 		{
+            
 			Card FirstCard = null;
 			if (CardsList != null && CardsList.Count > 0) 
 			{
@@ -445,6 +460,13 @@ namespace Sprat
 				break;
 			}
 		}
-	}
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
+    }
 }
 

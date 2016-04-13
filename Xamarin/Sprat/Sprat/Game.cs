@@ -3,24 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Sprat
 {
-	public class Game
+	public class Game : INotifyPropertyChanged
 	{
-		public int PeopleCount = 4;
-		public int CardsCount = 32;
-		public int StepInRoundCount = 8;
+		public const int PeopleCount = 4;
+		public const int StepInRoundCount = 8;
 
 		public List<Player> Players;
-
-		public int Step;
+        public int Step;
 
 		public List<Card> CardsOfCurrStep;
 		public int FPStep;
 		public int FPRound;
+        private int round;
+        public int Round
+        {
+            get { return round; }
+            set
+            {
+                if (round != value)
+                {
+                    round = value;
+                    OnPropertyChanged("Round");
+                }
+            }
+        }
 		public int cnt { get; private set;}
-		public int WinPlayer { get; private set;}
 		public Suit TrumpSuit;
 
 		public Game()
@@ -30,6 +41,7 @@ namespace Sprat
 			Init();
 			TrumpSuit = 0;
 			cnt = 0;
+            Round = 1;
 		}
 
 		public Tuple<int, Card> DoStep2()
@@ -43,7 +55,7 @@ namespace Sprat
 				return new Tuple<int, Card> ((FPStep + cnt - 1) % PeopleCount, Card2Return);
 			}
 
-			WinPlayer = GetWinPlayer ();
+			int WinPlayer = GetWinPlayer ();
 			FPStep = WinPlayer;
 			Players [WinPlayer].UpdateScore (Step / StepInRoundCount, Step % StepInRoundCount, CardsOfCurrStep);
 			return new Tuple<int, Card> (WinPlayer, null);
@@ -98,7 +110,7 @@ namespace Sprat
 			Dictionary<int, Card> Cards = new Dictionary<int, Card>();
 			Random rand = new Random();
 			int j = 0;
-			while (Cards.Count < CardsCount)
+			while (Cards.Count < StepInRoundCount * PeopleCount)
 			{
 				int CardSuit = rand.Next(4);
 				int CardNumber = rand.Next(7, 15);
@@ -142,6 +154,13 @@ namespace Sprat
 				return -1;
 			}
 		}
-	}
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
+    }
 }
 

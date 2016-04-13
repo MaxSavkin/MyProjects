@@ -18,6 +18,8 @@ namespace Sprat {
         
         private Grid mainGrid;
         
+        private Label RndTxt;
+        
         private Grid secondGrid;
         
         private Label label;
@@ -37,6 +39,7 @@ namespace Sprat {
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(NewPage));
             mainGrid = this.FindByName<Grid>("mainGrid");
+            RndTxt = this.FindByName<Label>("RndTxt");
             secondGrid = this.FindByName<Grid>("secondGrid");
             label = this.FindByName<Label>("label");
             Score1 = this.FindByName<Label>("Score1");
