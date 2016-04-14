@@ -20,13 +20,13 @@ namespace Sprat
             Score0.BindingContext = game.Players[0];
             RndTxt.BindingContext = game;
 
-            TapGestureRecognizer doubleTup = new TapGestureRecognizer () { NumberOfTapsRequired = 1 };
-			doubleTup.Tapped += OnDoubleTup;
-			this.Content.GestureRecognizers.Add (doubleTup);
+            //TapGestureRecognizer doubleTup = new TapGestureRecognizer () { NumberOfTapsRequired = 1 };
+			//doubleTup.Tapped += OnDoubleTup;
+			//this.Content.GestureRecognizers.Add (doubleTup);
 
 			this.Content.SizeChanged += OnStackSizeChanged;
 
-            //Device.StartTimer(TimeSpan.FromSeconds(10), DoStep);
+            Device.StartTimer(TimeSpan.FromSeconds(1), DoStep);
         }
 
 		public void Init()
@@ -36,6 +36,7 @@ namespace Sprat
                 AbsoluteLayout.SetLayoutFlags(game.Players[0].Cards[i], AbsoluteLayoutFlags.None);
                 AbsoluteLayout.SetLayoutBounds(game.Players[0].Cards[i], new Rectangle((i + 2) * absoluteLayout.Width / 10, this.absoluteLayout.Height - 60, absoluteLayout.Width / 10, 60));
                 absoluteLayout.Children.Add(game.Players[0].Cards[i]);
+                game.Players[0].Cards[i].singleTup.Tapped += WaitPlayerAction;
             }
 
             Card.CHeight = game.Players[0].Cards[0].Height;
@@ -62,7 +63,18 @@ namespace Sprat
             Tuple<int, Card> res;
             if (!(game.Step > 0 && game.Step % Game.StepInRoundCount == 0 && (game.Round - 1) < game.Step / Game.StepInRoundCount))
             {
-                res = game.DoStep2();
+                if ((game.FPStep + game.cnt - 1) % Game.PeopleCount == 3)
+                {
+                    if (!game.IsPaused)
+                    {
+                        game.IsPaused = true;
+                        return false;
+                    }
+                    else
+                        game.IsPaused = false;
+                }
+
+                res = game.DoStep2(Card.SelectedCard);
 
                 if (game.cnt <= 4)
                 {
@@ -113,6 +125,11 @@ namespace Sprat
 		void OnStackSizeChanged (object sender, EventArgs args)
 		{
             Init();
+        }
+
+        void WaitPlayerAction(object sender, EventArgs e)
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(1), DoStep);
         }
 
     }

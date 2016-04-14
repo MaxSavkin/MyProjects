@@ -13,13 +13,22 @@ namespace Sprat
 		public Suit Suit { get; set; }
 		public Number Number { get; set; }
 		private Image CardImage;
+        public static Card SelectedCard;
 
-		public Card(Suit suit, Number number)
+        public TapGestureRecognizer singleTup;
+
+
+        public Card(Suit suit, Number number)
 		{
 			this.Suit = suit;
 			this.Number = number;
 			SetCardImage (this.Suit, this.Number);
-		}
+
+            singleTup = new TapGestureRecognizer() { NumberOfTapsRequired = 1 };
+            singleTup.Tapped += OnSingleTup;
+            this.Content.GestureRecognizers.Add(singleTup);
+
+        }
 
 		public void SetCardImage(Suit newSuit, Number newNumber)
 		{
@@ -27,6 +36,13 @@ namespace Sprat
             this.Padding = new Thickness(0, 0, 0, 0);
 			this.Content = CardImage;
 		}
-	}
+
+        public void OnSingleTup(object sender, EventArgs e)
+        {
+            SelectedCard = this;
+        }
+
+
+    }
 }
 

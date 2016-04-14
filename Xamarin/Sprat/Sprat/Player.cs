@@ -8,7 +8,7 @@ namespace Sprat
 	public class Player : INotifyPropertyChanged
 	{
 		public List<Card> Cards;
-		private int score { get; set; }
+        private int score;
         public int Score
         {
             get { return score; }
@@ -21,8 +21,7 @@ namespace Sprat
                 }
             }
         }
-
-		private Random rand;
+        private Random rand;
 
 		public Player(List<Card> Cards)
 		{

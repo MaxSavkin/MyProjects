@@ -33,6 +33,7 @@ namespace Sprat
         }
 		public int cnt { get; private set;}
 		public Suit TrumpSuit;
+        public bool IsPaused = false;
 
 		public Game()
 		{
@@ -44,13 +45,18 @@ namespace Sprat
             Round = 1;
 		}
 
-		public Tuple<int, Card> DoStep2()
+		public Tuple<int, Card> DoStep2(Card selectCard)
 		{
 			cnt++;
 
 			if (cnt <= PeopleCount) 
 			{
-				Card Card2Return = Players [(FPStep + cnt - 1) % PeopleCount].DoStep (CardsOfCurrStep, Step / StepInRoundCount, Step % StepInRoundCount, TrumpSuit);
+                Card Card2Return;
+                if ((FPStep + cnt - 1) % PeopleCount == 0)
+                    Card2Return = selectCard;
+                else
+                    Card2Return = Players [(FPStep + cnt - 1) % PeopleCount].DoStep (CardsOfCurrStep, Step / StepInRoundCount, Step % StepInRoundCount, TrumpSuit);
+                Card.SelectedCard = null;
 				CardsOfCurrStep.Add (Card2Return);
 				return new Tuple<int, Card> ((FPStep + cnt - 1) % PeopleCount, Card2Return);
 			}
@@ -58,7 +64,7 @@ namespace Sprat
 			int WinPlayer = GetWinPlayer ();
 			FPStep = WinPlayer;
 			Players [WinPlayer].UpdateScore (Step / StepInRoundCount, Step % StepInRoundCount, CardsOfCurrStep);
-			return new Tuple<int, Card> (WinPlayer, null);
+            return null;
 		}
 
 		public void Init2NextStep()
