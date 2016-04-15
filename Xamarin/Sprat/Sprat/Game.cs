@@ -34,6 +34,7 @@ namespace Sprat
 		public int cnt { get; private set;}
 		public Suit TrumpSuit;
         public bool IsPaused = false;
+        public List<Card> PossibleCards { get; private set; }
 
 		public Game()
 		{
@@ -45,18 +46,14 @@ namespace Sprat
             Round = 1;
 		}
 
-		public Tuple<int, Card> DoStep2(Card selectCard)
+		public Tuple<int, Card> DoStep2()
 		{
 			cnt++;
 
 			if (cnt <= PeopleCount) 
 			{
                 Card Card2Return;
-                if ((FPStep + cnt - 1) % PeopleCount == 0)
-                    Card2Return = selectCard;
-                else
-                    Card2Return = Players [(FPStep + cnt - 1) % PeopleCount].DoStep (CardsOfCurrStep, Step / StepInRoundCount, Step % StepInRoundCount, TrumpSuit);
-                Card.SelectedCard = null;
+                Card2Return = Players [(FPStep + cnt - 1) % PeopleCount].DoStep (CardsOfCurrStep, Step / StepInRoundCount, Step % StepInRoundCount, (FPStep + cnt - 1) % PeopleCount, TrumpSuit);
 				CardsOfCurrStep.Add (Card2Return);
 				return new Tuple<int, Card> ((FPStep + cnt - 1) % PeopleCount, Card2Return);
 			}
@@ -160,6 +157,34 @@ namespace Sprat
 				return -1;
 			}
 		}
+
+        public void UpdatePossibleCards()
+        {
+            PossibleCards = Players[0].Cards;
+            switch(round)
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                     if (CardsOfCurrStep.Count > 0 && Players[0].Cards.Where(x => x.Suit == CardsOfCurrStep[0].Suit).Count() > 0)
+                        PossibleCards = Players[0].Cards.Where(x => x.Suit == CardsOfCurrStep[0].Suit).ToList();
+                    break;
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                     if (CardsOfCurrStep.Count > 0 && Players[0].Cards.Where(x => x.Suit == CardsOfCurrStep[0].Suit).Count() > 0)
+                        PossibleCards = Players[0].Cards.Where(x => x.Suit == CardsOfCurrStep[0].Suit).ToList();
+                    else if (CardsOfCurrStep.Count > 0 && Players[0].Cards.Where(x => x.Suit == TrumpSuit).Count() > 0)
+                        PossibleCards = Players[0].Cards.Where(x => x.Suit == TrumpSuit).ToList();
+                    break;
+                default:
+                    break;
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propName)

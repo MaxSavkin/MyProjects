@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Xamarin.Forms;
 using System.Threading.Tasks;
@@ -20,13 +21,9 @@ namespace Sprat
             Score0.BindingContext = game.Players[0];
             RndTxt.BindingContext = game;
 
-            //TapGestureRecognizer doubleTup = new TapGestureRecognizer () { NumberOfTapsRequired = 1 };
-			//doubleTup.Tapped += OnDoubleTup;
-			//this.Content.GestureRecognizers.Add (doubleTup);
-
 			this.Content.SizeChanged += OnStackSizeChanged;
 
-            Device.StartTimer(TimeSpan.FromSeconds(1), DoStep);
+            Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
         }
 
 		public void Init()
@@ -63,10 +60,14 @@ namespace Sprat
             Tuple<int, Card> res;
             if (!(game.Step > 0 && game.Step % Game.StepInRoundCount == 0 && (game.Round - 1) < game.Step / Game.StepInRoundCount))
             {
-                if ((game.FPStep + game.cnt - 1) % Game.PeopleCount == 3)
+                if ((game.FPStep + game.cnt - 1 + Game.PeopleCount) % Game.PeopleCount == 3 && game.cnt != Game.PeopleCount)
                 {
                     if (!game.IsPaused)
                     {
+                        game.UpdatePossibleCards();
+                        foreach (var card in game.PossibleCards)
+                            card.TranslateTo(0, -10);
+
                         game.IsPaused = true;
                         return false;
                     }
@@ -74,14 +75,16 @@ namespace Sprat
                         game.IsPaused = false;
                 }
 
-                res = game.DoStep2(Card.SelectedCard);
+                res = game.DoStep2();
 
                 if (game.cnt <= 4)
                 {
                     switch (res.Item1)
                     {
                         case 0:
-                            res.Item2.TranslateTo(absoluteLayout.Width * 7 / 12 - res.Item2.X - Card.CWidth / 2, absoluteLayout.Height / 2 + 0 - res.Item2.Y);
+                            res.Item2.TranslateTo(absoluteLayout.Width * 7 / 12 - res.Item2.X - Card.CWidth / 2, absoluteLayout.Height / 2 + 0 - res.Item2.Y - 10);
+                            foreach (var card in game.PossibleCards.Where(x => x != res.Item2))
+                                card.TranslateTo(0, 0);
                             break;
                         case 1:
                             res.Item2.IsVisible = true;
@@ -129,7 +132,9 @@ namespace Sprat
 
         void WaitPlayerAction(object sender, EventArgs e)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(1), DoStep);
+            if (game.IsPaused)
+                if (game.PossibleCards.Contains(Card.SelectedCard))
+                    Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
         }
 
     }

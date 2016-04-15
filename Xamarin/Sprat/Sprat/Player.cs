@@ -35,8 +35,13 @@ namespace Sprat
 			this.Cards = cards;
 		}
 
-		public Card DoStep(List<Card> CardsList, int Round, int Step, Suit trumpSuit = Suit.Diamond)
+		public Card DoStep(List<Card> CardsList, int Round, int Step, int PlayerId, Suit trumpSuit = Suit.Diamond)
 		{
+            if (PlayerId == 0)
+            {
+                Cards.Remove(Card.SelectedCard);
+                return Card.SelectedCard;
+            }
             
 			Card FirstCard = null;
 			if (CardsList != null && CardsList.Count > 0) 

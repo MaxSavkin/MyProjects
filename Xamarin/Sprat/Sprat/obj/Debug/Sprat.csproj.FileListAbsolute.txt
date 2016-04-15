@@ -47,5 +47,3 @@ D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.pdb
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.csprojResolveAssemblyReference.cache
 D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll.mdb
 D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll.mdb
-D:\MyProjects\Xamarin\Sprat\Sprat\obj\Debug\Sprat.dll.mdb
-D:\MyProjects\Xamarin\Sprat\Sprat\bin\Debug\Sprat.dll.mdb

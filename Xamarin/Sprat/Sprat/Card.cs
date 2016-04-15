@@ -14,7 +14,6 @@ namespace Sprat
 		public Number Number { get; set; }
 		private Image CardImage;
         public static Card SelectedCard;
-
         public TapGestureRecognizer singleTup;
 
 
@@ -41,8 +40,6 @@ namespace Sprat
         {
             SelectedCard = this;
         }
-
-
     }
 }
 
