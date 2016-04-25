@@ -7,10 +7,14 @@ namespace Sprat
 {
 	public partial class StartPage : ContentPage
 	{
-		public int Level = 1;
+        public Language lang;
+        private SettingsPage settingsPage;
+        private NewPage newPage;
 		public StartPage ()
 		{
 			InitializeComponent ();
+            settingsPage = new SettingsPage(this);
+            lang = Language.Ru;
 
 			TapGestureRecognizer singleTupS = new TapGestureRecognizer () { NumberOfTapsRequired = 1 };
 			singleTupS.Tapped += OnSingleTupS;
@@ -24,11 +28,15 @@ namespace Sprat
 
 		public void OnSingleTupS(object sender, EventArgs e)
 		{
-			this.Navigation.PushModalAsync (new SettingsPage (this));
+            settingsPage.Parent = null;
+			this.Navigation.PushModalAsync (settingsPage);
 		}
 		public void OnSingleTupG(object sender, EventArgs e)
 		{
-			this.Navigation.PushModalAsync (new NewPage());
+            if (newPage == null)
+                newPage = new NewPage();
+            newPage.Parent = null;
+			this.Navigation.PushModalAsync (newPage);
 		}
 	}
 }

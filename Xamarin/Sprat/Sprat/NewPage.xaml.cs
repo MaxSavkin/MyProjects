@@ -18,10 +18,10 @@ namespace Sprat
             Score1.BindingContext = game.Players[1];
             Score2.BindingContext = game.Players[2];
             Score3.BindingContext = game.Players[3];
-            Score0.BindingContext = game.Players[0];
+            //Score0.BindingContext = game.Players[0];
             RndTxt.BindingContext = game;
 
-			this.Content.SizeChanged += OnStackSizeChanged;
+            this.Content.SizeChanged += OnStackSizeChanged;
 
             Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
         }

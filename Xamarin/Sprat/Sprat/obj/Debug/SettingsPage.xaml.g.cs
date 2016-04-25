@@ -16,14 +16,8 @@ namespace Sprat {
     
     public partial class SettingsPage : ContentPage {
         
-        private Slider LevelSlider;
-        
-        private Button Save;
-        
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SettingsPage));
-            LevelSlider = this.FindByName<Slider>("LevelSlider");
-            Save = this.FindByName<Button>("Save");
         }
     }
 }

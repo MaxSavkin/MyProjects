@@ -4,6 +4,8 @@ using Xamarin.Forms;
 
 namespace Sprat
 {
+    public enum Language { Ru, En}
+
 	public class App : Application
 	{
 		static public float ScreenWidth;
@@ -11,8 +13,8 @@ namespace Sprat
 
 		public App ()
 		{
-			// The root page of your application
-			MainPage = new NewPage();
+            // The root page of your application
+            MainPage = new StartPage();
 		}
 
 		protected override void OnStart ()

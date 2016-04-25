@@ -34,8 +34,6 @@ namespace Sprat {
         
         private AbsoluteLayout absoluteLayout;
         
-        private Label Score0;
-        
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(NewPage));
             mainGrid = this.FindByName<Grid>("mainGrid");
@@ -47,7 +45,6 @@ namespace Sprat {
             Score3 = this.FindByName<Label>("Score3");
             thirdGrid = this.FindByName<Grid>("thirdGrid");
             absoluteLayout = this.FindByName<AbsoluteLayout>("absoluteLayout");
-            Score0 = this.FindByName<Label>("Score0");
         }
     }
 }

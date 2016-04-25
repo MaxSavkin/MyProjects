@@ -267,5 +267,6 @@ D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\player0.jpg
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\player0.jpg
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\R.cs.flag
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\uploadflags.txt
+D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.dll.mdb
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.dll.mdb
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.dll.mdb
