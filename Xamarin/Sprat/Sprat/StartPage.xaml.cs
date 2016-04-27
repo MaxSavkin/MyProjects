@@ -48,7 +48,7 @@ namespace Sprat
 		}
 		public void OnSingleTupGame(object sender, EventArgs e)
 		{
-			this.Navigation.PushAsync (new NewPage());
+			this.Navigation.PushAsync (new NewPage(Lang));
 		}
 
         public void OnSingleTupDescription(object sender, EventArgs e)

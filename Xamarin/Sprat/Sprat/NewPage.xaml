@@ -16,7 +16,7 @@
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
       <StackLayout Grid.Row="0" Grid.Column="1" Spacing="0">
-        <Label Text="Кильки" Font="Bold, Large" TextColor="Accent" HorizontalOptions="Center" />
+        <Label x:Name ="NameTxt" Text="Кильки" Font="Bold, Large" TextColor="Accent" HorizontalOptions="Center" />
         <Label x:Name="RndTxt" Text="{Binding Round, StringFormat='Раунд: {0:F0}'}" HorizontalOptions="Center" />
       </StackLayout>
 			<Grid x:Name = "secondGrid" Grid.Row = "1" Grid.Column="1" VerticalOptions = "End">
@@ -30,17 +30,17 @@
 					<ColumnDefinition Width="*" />
 				</Grid.ColumnDefinitions>
 				<StackLayout Grid.Row="1" Grid.Column="0" Spacing = "0" VerticalOptions = "End">
-					<Label x:Name = "label" Text = "Юра" HorizontalOptions = "Center"/>
+					<Label x:Name = "Player1Txt" Text = "Юра" HorizontalOptions = "Center"/>
 					<Image Source = "Player1.jpg" HorizontalOptions = "Center"/>
 					<Label x:Name = "Score1" Text = "{Binding Score}" HorizontalOptions = "Center"/>
 				</StackLayout>
 				<StackLayout Grid.Row="1" Grid.Column="1" Spacing = "0" VerticalOptions = "End">
-					<Label Text = "Вова" HorizontalOptions = "Center"/>
+					<Label x:Name = "Player2Txt" Text = "Вова" HorizontalOptions = "Center"/>
 					<Image Source = "Player2.jpg" HorizontalOptions = "Center"/>
 					<Label x:Name = "Score2" Text = "{Binding Score}" HorizontalOptions = "Center"/>
 				</StackLayout>
 				<StackLayout Grid.Row="1" Grid.Column="2" Spacing = "0" VerticalOptions = "End">
-					<Label Text = "Рома" HorizontalOptions = "Center"/>
+					<Label x:Name = "Player3Txt" Text = "Рома" HorizontalOptions = "Center"/>
 					<Image Source = "Player3.jpg" HorizontalOptions = "Center"/>
 					<Label x:Name = "Score3" Text = "{Binding Score}" HorizontalOptions = "Center"/>
 				</StackLayout>

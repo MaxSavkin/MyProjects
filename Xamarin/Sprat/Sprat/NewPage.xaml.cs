@@ -10,7 +10,7 @@ namespace Sprat
 	public partial class NewPage : ContentPage
 	{
 		public Game game;
-		public NewPage ()
+		public NewPage (Language lang = Language.Ru)
 		{
 			InitializeComponent ();
 			game = new Game ();
@@ -20,7 +20,8 @@ namespace Sprat
             Score3.BindingContext = game.Players[3];
             //Score0.BindingContext = game.Players[0];
             RndTxt.BindingContext = game;
-
+            OnValueChanged(null, new LanguageEventArgs() { lang = lang });
+            StartPage.ValueChanged += OnValueChanged;
             this.Content.SizeChanged += OnStackSizeChanged;
 
             Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
@@ -135,6 +136,30 @@ namespace Sprat
             if (game.IsPaused)
                 if (game.PossibleCards.Contains(Card.SelectedCard))
                     Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
+        }
+
+        public void OnValueChanged(object sender, EventArgs e)
+        {
+            switch ((e as LanguageEventArgs).lang)
+            {
+
+                case Language.Ru:
+                    NameTxt.Text = App.Strings["Name"].Item1;
+                    RndTxt.Text = RndTxt.Text.Remove(0, 5).Insert(0, App.Strings["Round"].Item1);
+                    Player1Txt.Text = App.Strings["Player1"].Item1;
+                    Player2Txt.Text = App.Strings["Player2"].Item1;
+                    Player3Txt.Text = App.Strings["Player3"].Item1;
+                    break;
+                case Language.En:
+                    NameTxt.Text = App.Strings["Name"].Item2;
+                    RndTxt.Text = RndTxt.Text.Remove(0, 5).Insert(0, App.Strings["Round"].Item2);
+                    Player1Txt.Text = App.Strings["Player1"].Item2;
+                    Player2Txt.Text = App.Strings["Player2"].Item2;
+                    Player3Txt.Text = App.Strings["Player3"].Item2;
+                    break;
+                default:
+                    break;
+            }
         }
 
     }

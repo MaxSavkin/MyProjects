@@ -18,15 +18,21 @@ namespace Sprat {
         
         private Grid mainGrid;
         
+        private Label NameTxt;
+        
         private Label RndTxt;
         
         private Grid secondGrid;
         
-        private Label label;
+        private Label Player1Txt;
         
         private Label Score1;
         
+        private Label Player2Txt;
+        
         private Label Score2;
+        
+        private Label Player3Txt;
         
         private Label Score3;
         
@@ -37,11 +43,14 @@ namespace Sprat {
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(NewPage));
             mainGrid = this.FindByName<Grid>("mainGrid");
+            NameTxt = this.FindByName<Label>("NameTxt");
             RndTxt = this.FindByName<Label>("RndTxt");
             secondGrid = this.FindByName<Grid>("secondGrid");
-            label = this.FindByName<Label>("label");
+            Player1Txt = this.FindByName<Label>("Player1Txt");
             Score1 = this.FindByName<Label>("Score1");
+            Player2Txt = this.FindByName<Label>("Player2Txt");
             Score2 = this.FindByName<Label>("Score2");
+            Player3Txt = this.FindByName<Label>("Player3Txt");
             Score3 = this.FindByName<Label>("Score3");
             thirdGrid = this.FindByName<Grid>("thirdGrid");
             absoluteLayout = this.FindByName<AbsoluteLayout>("absoluteLayout");
