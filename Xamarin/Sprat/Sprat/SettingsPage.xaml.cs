@@ -7,14 +7,14 @@ namespace Sprat
 {
 	public partial class SettingsPage : ContentPage
 	{
-		private StartPage ParentPage;
         private Label header;
         private Picker picker;
+        private StartPage startPage;
 
-		public SettingsPage (StartPage mainPage)
+		public SettingsPage (StartPage startPage)
 		{
 			InitializeComponent ();
-			this.ParentPage = mainPage;
+            this.startPage = startPage;
 
             header = new Label
             {
@@ -25,7 +25,8 @@ namespace Sprat
 
             picker = new Picker
             {
-                Title = "Русский",
+
+                Title = startPage.Lang == Language.Ru ?  "Русский": "English",
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.Center
             };
@@ -40,7 +41,7 @@ namespace Sprat
 
         void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ParentPage.lang = (Language)picker.SelectedIndex;
+            startPage.Lang = (Language)picker.SelectedIndex;
         }
 
     }

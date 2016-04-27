@@ -8,6 +8,9 @@
 		<Frame x:Name = "Settings" OutlineColor = "Blue" VerticalOptions = "Center" HorizontalOptions = "Center">
 			<Label Text = "Настройка"/>
 		</Frame>
+    <Frame x:Name = "Description" OutlineColor = "Blue" VerticalOptions = "Center" HorizontalOptions = "Center">
+      <Label Text = "Описание"/>
+    </Frame>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

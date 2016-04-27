@@ -14,22 +14,10 @@ namespace Sprat {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class StartPage : ContentPage {
-        
-        private StackLayout Menu;
-        
-        private Frame Play;
-        
-        private Frame Settings;
-        
-        private Frame Description;
+    public partial class DescriptonPage : ContentPage {
         
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(StartPage));
-            Menu = this.FindByName<StackLayout>("Menu");
-            Play = this.FindByName<Frame>("Play");
-            Settings = this.FindByName<Frame>("Settings");
-            Description = this.FindByName<Frame>("Description");
+            this.LoadFromXaml(typeof(DescriptonPage));
         }
     }
 }
