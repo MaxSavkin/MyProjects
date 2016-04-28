@@ -22,9 +22,13 @@ namespace Sprat {
         
         private Label RndTxt;
         
+        private Label HintTxt;
+        
         private Grid secondGrid;
         
         private Label Player1Txt;
+        
+        private Image PlayerJPG;
         
         private Label Score1;
         
@@ -45,8 +49,10 @@ namespace Sprat {
             mainGrid = this.FindByName<Grid>("mainGrid");
             NameTxt = this.FindByName<Label>("NameTxt");
             RndTxt = this.FindByName<Label>("RndTxt");
+            HintTxt = this.FindByName<Label>("HintTxt");
             secondGrid = this.FindByName<Grid>("secondGrid");
             Player1Txt = this.FindByName<Label>("Player1Txt");
+            PlayerJPG = this.FindByName<Image>("PlayerJPG");
             Score1 = this.FindByName<Label>("Score1");
             Player2Txt = this.FindByName<Label>("Player2Txt");
             Score2 = this.FindByName<Label>("Score2");

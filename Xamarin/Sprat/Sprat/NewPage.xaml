@@ -6,8 +6,9 @@
 	<ContentView>
 		<Grid x:Name="mainGrid">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="1*" />
-				<RowDefinition Height="3*" />
+				<RowDefinition Height="2*" />
+        <RowDefinition Height="1*" />
+				<RowDefinition Height="4*" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="10*" />
 			</Grid.RowDefinitions>
@@ -19,7 +20,8 @@
         <Label x:Name ="NameTxt" Text="Кильки" Font="Bold, Large" TextColor="Accent" HorizontalOptions="Center" />
         <Label x:Name="RndTxt" Text="{Binding Round, StringFormat='Раунд: {0:F0}'}" HorizontalOptions="Center" />
       </StackLayout>
-			<Grid x:Name = "secondGrid" Grid.Row = "1" Grid.Column="1" VerticalOptions = "End">
+      <Label x:Name ="HintTxt" Grid.Row="1" Grid.Column="1" Text="Не берем взяток" HorizontalOptions="Center" />
+			<Grid x:Name = "secondGrid" Grid.Row = "2" Grid.Column="1" VerticalOptions = "End">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="0" />
 					<RowDefinition Height="1*" />
@@ -31,7 +33,7 @@
 				</Grid.ColumnDefinitions>
 				<StackLayout Grid.Row="1" Grid.Column="0" Spacing = "0" VerticalOptions = "End">
 					<Label x:Name = "Player1Txt" Text = "Юра" HorizontalOptions = "Center"/>
-					<Image Source = "Player1.jpg" HorizontalOptions = "Center"/>
+					<Image x:Name ="PlayerJPG" Source = "Player1.jpg" HorizontalOptions = "Center"/>
 					<Label x:Name = "Score1" Text = "{Binding Score}" HorizontalOptions = "Center"/>
 				</StackLayout>
 				<StackLayout Grid.Row="1" Grid.Column="1" Spacing = "0" VerticalOptions = "End">
@@ -45,7 +47,7 @@
 					<Label x:Name = "Score3" Text = "{Binding Score}" HorizontalOptions = "Center"/>
 				</StackLayout>
 			</Grid>
-			<Grid x:Name = "thirdGrid" Grid.Row = "2" Grid.Column="1" VerticalOptions = "Start">
+			<Grid x:Name = "thirdGrid" Grid.Row = "3" Grid.Column="1" VerticalOptions = "Start">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="0" />
 					<RowDefinition Height="1*" />
@@ -89,7 +91,7 @@
 					<Image Source = "a52.bmp" HorizontalOptions = "Center" VerticalOptions = "Start" Rotation = "30"/>
 				</Grid>
 			</Grid> 
-			<AbsoluteLayout x:Name = "absoluteLayout" Grid.Row = "3" Grid.Column="1">
+			<AbsoluteLayout x:Name = "absoluteLayout" Grid.Row = "4" Grid.Column="1">
         <!--<StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="16.18, 0, 32.36, 60" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Aqua">
 				<Label Text = "Козырь" />
 				<StackLayout Spacing = "0" AbsoluteLayout.LayoutBounds="0, 0.8, 0.2, 0.3" AbsoluteLayout.LayoutFlags="All">

@@ -163,7 +163,8 @@ C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\pla
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\player0.jpg
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\R.cs.flag
 C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\uploadflags.txt
-D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.csprojResolveAssemblyReference.cache
+C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.dll.mdb
+C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.dll.mdb
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.dll
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.pdb
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\com.companyname.sprat.apk
@@ -179,6 +180,7 @@ D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.pdb
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Xamarin.Insights.xml
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Xamarin.Forms.Core.xml
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.csprojResolveAssemblyReference.cache
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.dll
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.pdb
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\android\bin\com.companyname.sprat.apk
@@ -264,7 +266,10 @@ D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\player0.jpg
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable-xhdpi\player0.jpg
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\R.cs.flag
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\uploadflags.txt
+D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\c_trump.bmp
+D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\d_trump.bmp
+D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\h_trump.bmp
+D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\s_trump.bmp
+D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\res\drawable\trump.bmp
 D:\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.dll.mdb
 D:\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.dll.mdb
-C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\obj\Debug\Sprat.Droid.dll.mdb
-C:\Users\dns\Documents\MyProjects\Xamarin\Sprat\Droid\bin\Debug\Sprat.Droid.dll.mdb

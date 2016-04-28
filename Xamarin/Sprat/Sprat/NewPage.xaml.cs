@@ -10,7 +10,13 @@ namespace Sprat
 	public partial class NewPage : ContentPage
 	{
 		public Game game;
-		public NewPage (Language lang = Language.Ru)
+
+        private Label Player0Txt;
+        private Image PlayerImg;
+        private Label Score0;
+        private Label TrumpTxt;
+        private Image TrumpImg;
+        public NewPage ()
 		{
 			InitializeComponent ();
 			game = new Game ();
@@ -18,11 +24,13 @@ namespace Sprat
             Score1.BindingContext = game.Players[1];
             Score2.BindingContext = game.Players[2];
             Score3.BindingContext = game.Players[3];
-            //Score0.BindingContext = game.Players[0];
+            
             RndTxt.BindingContext = game;
-            OnValueChanged(null, new LanguageEventArgs() { lang = lang });
-            StartPage.ValueChanged += OnValueChanged;
+            game.PropertyChanged += OnLanguageChanged;
+            
+            StartPage.LanguageChanged += OnLanguageChanged;
             this.Content.SizeChanged += OnStackSizeChanged;
+            OnLanguageChanged(null, null);
 
             Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
         }
@@ -49,6 +57,23 @@ namespace Sprat
                     absoluteLayout.Children.Add(game.Players[i].Cards[j]);
                     game.Players[i].Cards[j].IsVisible = false;
                 }
+
+            Label Player0Txt = new Label() { Text = "Игрок", HorizontalOptions = LayoutOptions.Center };
+            Image PlayerImg = new Image { Source = "Player0.jpg", HorizontalOptions = LayoutOptions.Center };
+            Label Score0 = new Label() { Text = "0", HorizontalOptions = LayoutOptions.Center };
+            Score0.BindingContext = game.Players[0];
+
+            TrumpTxt = new Label() { Text = "Козырь", HorizontalOptions = LayoutOptions.Center };
+            TrumpImg = new Image { Source = "Trump.jpg" };
+
+            absoluteLayout.Children.Add(new StackLayout() { Children = { TrumpTxt }, Spacing = 0, HorizontalOptions = LayoutOptions.Center },
+                new Rectangle(0, 0, absoluteLayout.Width * 0.2, absoluteLayout.Height), AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.YProportional);
+            absoluteLayout.Children.Add(TrumpImg,
+                new Rectangle(0.2 * absoluteLayout.Width / 2 - Card.CWidth / 2, HintTxt.Height, Card.CWidth, Card.CHeight));
+            absoluteLayout.Children.Add(new StackLayout() { Children = { Player0Txt, new Image { Source = "Player0.jpg", HorizontalOptions = LayoutOptions.Center }, Score0 },
+                Spacing = 0, HorizontalOptions = LayoutOptions.Center }, 
+                new Rectangle(0, 0.8, absoluteLayout.Width * 0.2, absoluteLayout.Height / 2), AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.YProportional);
+
         }
 
 		public void OnDoubleTup(object sender, EventArgs e)
@@ -138,26 +163,84 @@ namespace Sprat
                     Device.StartTimer(TimeSpan.FromMilliseconds(500), DoStep);
         }
 
-        public void OnValueChanged(object sender, EventArgs e)
+        public void OnLanguageChanged(object sender, EventArgs e)
         {
-            switch ((e as LanguageEventArgs).lang)
+            switch (StartPage.Lang)
             {
 
                 case Language.Ru:
                     NameTxt.Text = App.Strings["Name"].Item1;
-                    RndTxt.Text = RndTxt.Text.Remove(0, 5).Insert(0, App.Strings["Round"].Item1);
+                    RndTxt.Text = string.Format("{0}: {1}", App.Strings["Round"].Item1, game.Round);
                     Player1Txt.Text = App.Strings["Player1"].Item1;
                     Player2Txt.Text = App.Strings["Player2"].Item1;
                     Player3Txt.Text = App.Strings["Player3"].Item1;
+                    Player0Txt.Text = App.Strings["Player0"].Item1;
+
+                    switch (game.Round)
+                    {
+                        case 1:
+                            HintTxt.Text = App.Strings["Hint1"].Item1;
+                            break;
+                        case 2:
+                            HintTxt.Text = App.Strings["Hint2"].Item1;
+                            break;
+                        case 3:
+                            HintTxt.Text = App.Strings["Hint3"].Item1;
+                            break;
+                        case 4:
+                            HintTxt.Text = App.Strings["Hint4"].Item1;
+                            break;
+                        case 5:
+                            HintTxt.Text = App.Strings["Hint5"].Item1;
+                            break;
+                        case 6:
+                            HintTxt.Text = App.Strings["Hint6"].Item1;
+                            break;
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                            HintTxt.Text = App.Strings["Hint0"].Item1;
+                            break;
+                    }
+
                     break;
                 case Language.En:
                     NameTxt.Text = App.Strings["Name"].Item2;
-                    RndTxt.Text = RndTxt.Text.Remove(0, 5).Insert(0, App.Strings["Round"].Item2);
+                    RndTxt.Text = string.Format("{0}: {1}", App.Strings["Round"].Item2, game.Round);
                     Player1Txt.Text = App.Strings["Player1"].Item2;
                     Player2Txt.Text = App.Strings["Player2"].Item2;
                     Player3Txt.Text = App.Strings["Player3"].Item2;
-                    break;
-                default:
+                    Player0Txt.Text = App.Strings["Player0"].Item2;
+
+                    switch (game.Round)
+                    {
+                        case 1:
+                            HintTxt.Text = App.Strings["Hint1"].Item2;
+                            break;
+                        case 2:
+                            HintTxt.Text = App.Strings["Hint2"].Item2;
+                            break;
+                        case 3:
+                            HintTxt.Text = App.Strings["Hint3"].Item2;
+                            break;
+                        case 4:
+                            HintTxt.Text = App.Strings["Hint4"].Item2;
+                            break;
+                        case 5:
+                            HintTxt.Text = App.Strings["Hint5"].Item2;
+                            break;
+                        case 6:
+                            HintTxt.Text = App.Strings["Hint6"].Item2;
+                            break;
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 10:
+                            HintTxt.Text = App.Strings["Hint0"].Item2;
+                            break;
+                    }
+
                     break;
             }
         }

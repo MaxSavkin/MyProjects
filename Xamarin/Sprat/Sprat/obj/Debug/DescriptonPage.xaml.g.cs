@@ -16,8 +16,11 @@ namespace Sprat {
     
     public partial class DescriptonPage : ContentPage {
         
+        private Label DescrTxt;
+        
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(DescriptonPage));
+            DescrTxt = this.FindByName<Label>("DescrTxt");
         }
     }
 }

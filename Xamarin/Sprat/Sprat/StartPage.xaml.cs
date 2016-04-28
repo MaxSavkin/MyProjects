@@ -7,8 +7,8 @@ namespace Sprat
 {
 	public partial class StartPage : ContentPage
 	{
-        private Language lang;
-        public Language Lang
+        private static Language lang;
+        public static Language Lang
         {
             get{ return lang; }
             set
@@ -16,11 +16,11 @@ namespace Sprat
                 if (value != lang)
                 {
                     lang = value;
-                    ValueChanged(null, new LanguageEventArgs() { lang = lang });
+                    LanguageChanged(null, null);
                 }
             }
         }
-        public static event EventHandler ValueChanged;
+        public static event EventHandler LanguageChanged;
 		public StartPage ()
 		{
 			InitializeComponent ();
@@ -38,7 +38,7 @@ namespace Sprat
             singleTupDescription.Tapped += OnSingleTupDescription;
             Description.GestureRecognizers.Add(singleTupDescription);
 
-            ValueChanged += OnValueChanged;
+            LanguageChanged += OnLanguageChanged;
 
         }
 
@@ -48,7 +48,7 @@ namespace Sprat
 		}
 		public void OnSingleTupGame(object sender, EventArgs e)
 		{
-			this.Navigation.PushAsync (new NewPage(Lang));
+			this.Navigation.PushAsync (new NewPage());
 		}
 
         public void OnSingleTupDescription(object sender, EventArgs e)
@@ -56,9 +56,9 @@ namespace Sprat
             this.Navigation.PushAsync(new DescriptonPage());
         }
 
-        public void OnValueChanged(object sender, EventArgs e)
+        public void OnLanguageChanged(object sender, EventArgs e)
         {
-            switch ((e as LanguageEventArgs).lang)
+            switch (StartPage.Lang)
             {
                 
                 case Language.Ru:

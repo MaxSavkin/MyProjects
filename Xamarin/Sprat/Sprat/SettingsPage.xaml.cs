@@ -26,7 +26,7 @@ namespace Sprat
             picker = new Picker
             {
 
-                Title = startPage.Lang == Language.Ru ?  "Русский": "English",
+                Title = StartPage.Lang == Language.Ru ?  "Русский": "English",
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalOptions = LayoutOptions.Center
             };
@@ -41,7 +41,7 @@ namespace Sprat
 
         void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            startPage.Lang = (Language)picker.SelectedIndex;
+            StartPage.Lang = (Language)picker.SelectedIndex;
         }
 
     }

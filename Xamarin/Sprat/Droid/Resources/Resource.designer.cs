@@ -75,91 +75,106 @@ namespace Sprat.Droid
 			public const int C_Ten = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int D_Ace = 2130837514;
+			public const int C_Trump = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int D_Eight = 2130837515;
+			public const int D_Ace = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int D_Jack = 2130837516;
+			public const int D_Eight = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int D_King = 2130837517;
+			public const int D_Jack = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int D_Nine = 2130837518;
+			public const int D_King = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int D_Queen = 2130837519;
+			public const int D_Nine = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int D_Seven = 2130837520;
+			public const int D_Queen = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int D_Ten = 2130837521;
+			public const int D_Seven = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int H_Ace = 2130837522;
+			public const int D_Ten = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int H_Eight = 2130837523;
+			public const int D_Trump = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int H_Jack = 2130837524;
+			public const int H_Ace = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int H_King = 2130837525;
+			public const int H_Eight = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int H_Nine = 2130837526;
+			public const int H_Jack = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int H_Queen = 2130837527;
+			public const int H_King = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int H_Seven = 2130837528;
+			public const int H_Nine = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int H_Ten = 2130837529;
+			public const int H_Queen = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int icon = 2130837530;
+			public const int H_Seven = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int Player0 = 2130837531;
+			public const int H_Ten = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int Player1 = 2130837532;
+			public const int H_Trump = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int Player2 = 2130837533;
+			public const int icon = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int Player3 = 2130837534;
+			public const int Player0 = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int S_Ace = 2130837535;
+			public const int Player1 = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int S_Eight = 2130837536;
+			public const int Player2 = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int S_Jack = 2130837537;
+			public const int Player3 = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int S_King = 2130837538;
+			public const int S_Ace = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int S_Nine = 2130837539;
+			public const int S_Eight = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int S_Queen = 2130837540;
+			public const int S_Jack = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int S_Seven = 2130837541;
+			public const int S_King = 2130837541;
 			
 			// aapt resource value: 0x7f020026
-			public const int S_Ten = 2130837542;
+			public const int S_Nine = 2130837542;
+			
+			// aapt resource value: 0x7f020027
+			public const int S_Queen = 2130837543;
+			
+			// aapt resource value: 0x7f020028
+			public const int S_Seven = 2130837544;
+			
+			// aapt resource value: 0x7f020029
+			public const int S_Ten = 2130837545;
+			
+			// aapt resource value: 0x7f02002a
+			public const int S_Trump = 2130837546;
+			
+			// aapt resource value: 0x7f02002b
+			public const int Trump = 2130837547;
 			
 			static Drawable()
 			{
