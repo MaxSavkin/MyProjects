@@ -92,14 +92,6 @@
 				</Grid>
 			</Grid> 
 			<AbsoluteLayout x:Name = "absoluteLayout" Grid.Row = "4" Grid.Column="1">
-        <!--<StackLayout Spacing="0" AbsoluteLayout.LayoutBounds="16.18, 0, 32.36, 60" AbsoluteLayout.LayoutFlags="None" BackgroundColor="Aqua">
-				<Label Text = "Козырь" />
-				<StackLayout Spacing = "0" AbsoluteLayout.LayoutBounds="0, 0.8, 0.2, 0.3" AbsoluteLayout.LayoutFlags="All">
-					<Label Text = "Максим" HorizontalOptions = "Center"/>
-					<Image Source = "Player0.jpg" HorizontalOptions = "Center"/>
-					<Label x:Name = "Score0" Text = "{Binding Score}" HorizontalOptions = "Center"/>
-				</StackLayout>
-          </StackLayout>-->
 			</AbsoluteLayout>
 		</Grid>
 	</ContentView>

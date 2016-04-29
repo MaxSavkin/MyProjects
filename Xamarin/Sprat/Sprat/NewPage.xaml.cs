@@ -27,7 +27,15 @@ namespace Sprat
             
             RndTxt.BindingContext = game;
             game.PropertyChanged += OnLanguageChanged;
-            
+
+            Player0Txt = new Label() { Text = "Игрок", HorizontalOptions = LayoutOptions.Center };
+            PlayerImg = new Image { Source = "Player0.jpg", HorizontalOptions = LayoutOptions.Center };
+            Score0 = new Label() { Text = "0", HorizontalOptions = LayoutOptions.Center };
+            Score0.SetBinding(Label.TextProperty, "Score");
+            Score0.BindingContext = game.Players[0];
+            TrumpTxt = new Label() { Text = "Козырь", HorizontalOptions = LayoutOptions.Center };
+            TrumpImg = new Image { Source = "Trump.jpg" };
+
             StartPage.LanguageChanged += OnLanguageChanged;
             this.Content.SizeChanged += OnStackSizeChanged;
             OnLanguageChanged(null, null);
@@ -58,22 +66,24 @@ namespace Sprat
                     game.Players[i].Cards[j].IsVisible = false;
                 }
 
-            Label Player0Txt = new Label() { Text = "Игрок", HorizontalOptions = LayoutOptions.Center };
-            Image PlayerImg = new Image { Source = "Player0.jpg", HorizontalOptions = LayoutOptions.Center };
-            Label Score0 = new Label() { Text = "0", HorizontalOptions = LayoutOptions.Center };
-            Score0.BindingContext = game.Players[0];
+            if (game.Round > 6)
+                TrumpImg = new Image { Source = string.Format("{0}_Trump.jpg", game.TrumpSuit.ToString().Substring(0, 1)) };
 
-            TrumpTxt = new Label() { Text = "Козырь", HorizontalOptions = LayoutOptions.Center };
-            TrumpImg = new Image { Source = "Trump.jpg" };
-
-            absoluteLayout.Children.Add(new StackLayout() { Children = { TrumpTxt }, Spacing = 0, HorizontalOptions = LayoutOptions.Center },
-                new Rectangle(0, 0, absoluteLayout.Width * 0.2, absoluteLayout.Height), AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.YProportional);
-            absoluteLayout.Children.Add(TrumpImg,
-                new Rectangle(0.2 * absoluteLayout.Width / 2 - Card.CWidth / 2, HintTxt.Height, Card.CWidth, Card.CHeight));
-            absoluteLayout.Children.Add(new StackLayout() { Children = { Player0Txt, new Image { Source = "Player0.jpg", HorizontalOptions = LayoutOptions.Center }, Score0 },
-                Spacing = 0, HorizontalOptions = LayoutOptions.Center }, 
-                new Rectangle(0, 0.8, absoluteLayout.Width * 0.2, absoluteLayout.Height / 2), AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.YProportional);
-
+            if (game.Round == 1 || game.Round > 6)
+                absoluteLayout.Children.Add(TrumpImg,
+                    new Rectangle(0.2 * absoluteLayout.Width / 2 - Card.CWidth / 2, HintTxt.Height, Card.CWidth, Card.CHeight));
+            if (game.Round == 1)
+            {
+                absoluteLayout.Children.Add(new StackLayout() { Children = { TrumpTxt }, Spacing = 0, HorizontalOptions = LayoutOptions.Center },
+                    new Rectangle(0, 0, absoluteLayout.Width * 0.2, absoluteLayout.Height), AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.YProportional);
+                absoluteLayout.Children.Add(new StackLayout()
+                {
+                    Children = { Player0Txt, new Image { Source = "Player0.jpg", HorizontalOptions = LayoutOptions.Center }, Score0 },
+                    Spacing = 0,
+                    HorizontalOptions = LayoutOptions.Center
+                },
+                    new Rectangle(0, 0.8, absoluteLayout.Width * 0.2, absoluteLayout.Height / 2), AbsoluteLayoutFlags.XProportional | AbsoluteLayoutFlags.YProportional);
+            }
         }
 
 		public void OnDoubleTup(object sender, EventArgs e)
@@ -137,15 +147,15 @@ namespace Sprat
             }
             else
             {
-                Init();
                 game.FPRound++;
                 game.FPStep = game.FPRound;
                 game.Round++;
-                if (game.FPRound > 5)
+                if (game.Round > 6)
                 {
                     int t = (new Random()).Next(4);
                     game.TrumpSuit = (Suit)t;
                 }
+                Init();
             }
 
             return true;
@@ -175,6 +185,7 @@ namespace Sprat
                     Player2Txt.Text = App.Strings["Player2"].Item1;
                     Player3Txt.Text = App.Strings["Player3"].Item1;
                     Player0Txt.Text = App.Strings["Player0"].Item1;
+                    TrumpTxt.Text = App.Strings["Trump"].Item1;
 
                     switch (game.Round)
                     {
@@ -212,6 +223,7 @@ namespace Sprat
                     Player2Txt.Text = App.Strings["Player2"].Item2;
                     Player3Txt.Text = App.Strings["Player3"].Item2;
                     Player0Txt.Text = App.Strings["Player0"].Item2;
+                    TrumpTxt.Text = App.Strings["Trump"].Item2;
 
                     switch (game.Round)
                     {

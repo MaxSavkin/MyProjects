@@ -97,7 +97,9 @@ With the proper calculation of points as a result of the sum of points of all pl
             { "Hint4", new Tuple<string, string>("Не бери дам", "Don't take queens") },
             { "Hint5", new Tuple<string, string>("Не бери две последние взятки", "Don't take two last bribes") },
             { "Hint6", new Tuple<string, string>("Не бери червого короля", "Don't take heart's king") },
-            { "Hint0", new Tuple<string, string>("Берем взятки", "Take bribes") }
+            { "Hint0", new Tuple<string, string>("Берем взятки", "Take bribes") },
+            { "Trump", new Tuple<string, string>("Козырь", "Trump") },
+            { "Header", new Tuple<string, string>("Выберите язык", "Select language") }
         };
 
         public App ()
