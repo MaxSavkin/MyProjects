@@ -191,6 +191,7 @@ namespace Sprat
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            int a = 0;
         }
     }
 }

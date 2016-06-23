@@ -105,7 +105,7 @@ With the proper calculation of points as a result of the sum of points of all pl
         public App ()
 		{
             // The root page of your application
-            MainPage = new NavigationPage(new StartPage());
+            MainPage = new NewStartPage();
             //MainPage = new NewPage();
 		}
 
